@@ -1,5 +1,5 @@
 <template>
-	<form>
+	<form @submit.prevent="handleForm()">
 		<div v-for="(value, key) in form" :key="key">
 			<v-text-field
 				v-if="value.type === 'string'"
@@ -16,13 +16,9 @@
 			></v-select>
 		</div>
 		<v-row>
+			<v-col><v-btn width="100%" color="success">Добавить</v-btn></v-col>
 			<v-col
-				><v-btn width="100%" @click="handleForm()" color="success"
-					>Добавить</v-btn
-				></v-col
-			>
-			<v-col
-				><v-btn width="100%" @click="handleForm()" color="error"
+				><v-btn width="100%" color="error" @click="$emit('closeDialog')"
 					>Закрыть</v-btn
 				></v-col
 			>
