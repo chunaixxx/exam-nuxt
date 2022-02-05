@@ -47,17 +47,17 @@ export default {
 			drawer: true,
 			items: [
 				{
-					icon: 'mdi-apps',
+					icon: 'mdi-home',
 					title: 'Главная',
 					to: '/'
 				},
 				{
-					icon: 'mdi-chart-bubble',
+					icon: 'mdi-account-box',
 					title: 'О нас',
 					to: '/about'
 				},
 				{
-					icon: 'mdi-chart-bubble',
+					icon: 'mdi-view-list',
 					title: 'Список животных',
 					to: '/baby'
 				}
