@@ -15,7 +15,8 @@
 				required
 			></v-select>
 		</div>
-		<v-btn width="100%" @click="handleForm()">Добавить</v-btn>
+		<v-btn width="100%" @click="handleForm()" color="success" >Добавить</v-btn>
+		<v-btn width="100%" @click="handleForm()" color="error" >Добавить</v-btn>
 	</form>
 </template>
 
