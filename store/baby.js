@@ -1,6 +1,6 @@
 export const state = () => ({
 	animals: [],
-	form: {},
+	form: {}
 })
 
 export const mutations = {
@@ -15,15 +15,23 @@ export const mutations = {
 
 export const actions = {
 	async fetchAnimals({ commit }) {
-		const response = await this.$axios.get('/baby')
+		try {
+			const response = await this.$axios.get('/baby')
 
-		commit('setAnimals', response.data)
+			commit('setAnimals', response.data)
+		} catch (e) {
+			console.log(e)
+		}
 	},
 
 	async fetchForm({ commit }) {
-		const response = await this.$axios.get('/baby/form')
+		try {
+			const response = await this.$axios.get('/baby/form')
 
-		commit('setForm', response.data.fields)
+			commit('setForm', response.data.fields)
+		} catch (e) {
+			console.log(e)
+		}
 	}
 }
 
