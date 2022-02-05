@@ -27,8 +27,6 @@ export const actions = {
     async fetchWidgetStats({ commit }) {
         const response = await this.$axios.get('/left_widget')
 
-        console.log(1);
-
         commit('setWidgetStats', response.data)
     },
 
