@@ -15,8 +15,18 @@
 				required
 			></v-select>
 		</div>
-		<v-btn width="100%" @click="handleForm()" color="success" >Добавить</v-btn>
-		<v-btn width="100%" @click="handleForm()" color="error" >Добавить</v-btn>
+		<v-row>
+			<v-col
+				><v-btn width="100%" @click="handleForm()" color="success"
+					>Добавить</v-btn
+				></v-col
+			>
+			<v-col
+				><v-btn width="100%" @click="handleForm()" color="error"
+					>Закрыть</v-btn
+				></v-col
+			>
+		</v-row>
 	</form>
 </template>
 
@@ -24,7 +34,7 @@
 import { mapGetters } from 'vuex'
 
 export default {
-    emits: ['closeDialog'],
+	emits: ['closeDialog'],
 
 	data: () => ({
 		data: {}
@@ -48,7 +58,7 @@ export default {
 					this.data[field] = ''
 				}
 
-                this.$emit('closeDialog')
+				this.$emit('closeDialog')
 			} catch (e) {
 				console.log(e)
 			}
