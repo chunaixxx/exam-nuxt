@@ -24,35 +24,47 @@ export const mutations = {
 }
 
 export const actions = {
-    async fetchWidgetStats({ commit }) {
-        const response = await this.$axios.get('/left_widget')
+	async fetchWidgetStats({ commit }) {
+		try {
+			const response = await this.$axios.get('/left_widget')
 
-        commit('setWidgetStats', response.data)
-    },
+			commit('setWidgetStats', response.data)
+		} catch (e) {
+			console.log(e)
+		}
+	},
 
-    async fetchHome({ commit }) {
-        const response = await this.$axios.get('/home_page')
+	async fetchHome({ commit }) {
+		try {
+			const response = await this.$axios.get('/home_page')
 
-        commit('setHome', response.data)
-    },
+			commit('setHome', response.data)
+		} catch (e) {
+			console.log(e)
+		}
+	},
 
-    async fetchAbout({ commit }) {
-        const response = await this.$axios.get('/about_page')
+	async fetchAbout({ commit }) {
+		try {
+			const response = await this.$axios.get('/about_page')
 
-        commit('setAbout', response.data)
-    },
+			commit('setAbout', response.data)
+		} catch (e) {
+			console.log(e)
+		}
+	}
 }
 
 export const getters = {
-    getWidgetStats(state) {
-        return state.widgetStats
-    },
+	getWidgetStats(state) {
+		return state.widgetStats
+	},
 
-    getHome(state) {
-        return state.home
-    },
+	getHome(state) {
+		return state.home
+	},
 
-    getAbout(state) {
-        return state.about
-    }
+	getAbout(state) {
+		return state.about
+	}
 }
